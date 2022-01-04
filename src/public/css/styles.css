@@ -191,7 +191,7 @@ header{
 .home img{
 
   width: clamp(300px, 40%, 370px);
-  border-radius: 100%;
+  border-radius: 25% 10%;
   border: 5px solid #F39422;
 }
 

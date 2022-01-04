@@ -1,12 +1,12 @@
 const express = require('express')
 const router = express.Router()
 const nodemailer = require('nodemailer')
-const { google } = require("googleapis")
 require('dotenv').config()
 
 router.post('/', (req, res) => {
 
     const {name, email, phone, message} = req.body
+
     const HTMLContent = `
         <div align='center'>
             <h1>Hola Santiago, mi nombre es ${name} y quiero contactarte...</h1>
@@ -15,41 +15,44 @@ router.post('/', (req, res) => {
             <h3>Email: ${email}</h3>
             <h3>Número de celular: ${phone}</h3>
         </div>
-    `
+        `
 
-    const CLIENT_ID = process.env.CLIENT_ID
-    const CLIENT_SECRET = process.env.CLIENT_SECRET
-    const REDIRECT_URI = process.env.REDIRECT_URI
-    const REFRESH_TOKEN = process.env.REFRESH_TOKEN
+    if(phone === ''){
 
-    const oAuth2Client = new google.auth.OAuth2(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI)
+        HTMLContent = `
+        <div align='center'>
+            <h1>Hola Santiago, mi nombre es ${name} y quiero contactarte...</h1>
+            <h2>${message}</h2>
+            <h3>Mi información de contacto es:</h3>
+            <h3>Email: ${email}</h3>
+        </div>
+        `
+    }
 
-    oAuth2Client.setCredentials({refresh_token: REFRESH_TOKEN})
+    const USER = process.env.USER
+    const PASSWORD = process.env.PASSWORD
+    const SECURE_PORT = process.env.SECURE_PORT
+    const EMAIL = process.env.EMAIL
 
     async function sendEmail(){
-
-        const accessToken = await oAuth2Client.getAccessToken()
 
         try{
 
             const transporter = nodemailer.createTransport({
 
-                service: "gmail",
+                host: 'smtp.gmail.com',
+                port: SECURE_PORT,
+                secure: true,
                 auth:{
-                    type: 'OAuth2',
-                    user: 'santiagopujanatech@gmail.com',
-                    clientId: CLIENT_ID,
-                    clientSecret: CLIENT_SECRET,
-                    refreshToken: REFRESH_TOKEN,
-                    accessToken: accessToken
-
+                    user: USER,
+                    pass: PASSWORD
                 }
             })
 
             const mail_options = {
 
-                from: "Mi Portafolio Web <santiagopujanatech@gmail.com>",
-                to: "santiagopujana@gmail.com",
+                from: "Mi Portafolio Web <"+USER+">",
+                to: EMAIL,
                 subject: 'Quiero contactarte',
                 html: HTMLContent
             }
@@ -59,6 +62,7 @@ router.post('/', (req, res) => {
 
         }catch(err){
             console.log(err)
+            transporter.close()
         }
     }
 
