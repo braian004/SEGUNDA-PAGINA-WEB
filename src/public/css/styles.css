@@ -190,7 +190,7 @@ header{
 
 .home img{
 
-  width: clamp(300px, 40%, 370px);
+  width: clamp(250px, 40%, 300px);
   border-radius: 25% 10%;
   border: 5px solid #F39422;
 }
@@ -612,7 +612,7 @@ footer a{
   }
 }
 
-@media screen and (min-width: 1034px){
+@media screen and (min-width: 1137px){
 
   .home, .about{
 
