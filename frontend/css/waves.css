@@ -9,7 +9,7 @@
     animation: animate 20s linear infinite;
 }
 
-.wave::before{
+/*.wave::before{
 
     content: '';
     width: 100%;
@@ -60,7 +60,7 @@
 
         background-position: 0;
     }
-}
+}*/
 
 .top-wave{
 
@@ -85,7 +85,7 @@
     fill: #FFFFFF;
 }
 
-.bottom-wave{
+.bottom-wave, .home-wave{
 
     position: absolute;
     bottom: 0;
@@ -95,7 +95,7 @@
     line-height: 0;
 }
 
-.bottom-wave svg{
+.bottom-wave svg, .home-wave svg{
 
     position: relative;
     display: block;
@@ -111,4 +111,15 @@
 .bottom-wave .contact-shape-fill{
 
     fill: #F39422;
+}
+
+.home-wave svg{
+
+    filter: invert(100%);
+}
+
+.home-wave .home-shape-fill {
+
+    fill: black;
+    stroke: black;
 }
