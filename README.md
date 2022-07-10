@@ -1,6 +1,6 @@
 <div align="justify">
 
-<h1 align="center">My Web Portafolio</h1>
+<h1 align="center">My Web Portfolio</h1>
 
 <div align="center">
   <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" />
