@@ -24,4 +24,5 @@
   - JWT
   #### Published in: Netlify
 
+  <a href="https://github.com/SantiagoPujana/MyWebPortfolio/blob/main/LICENSE"><b>MIT License</b></a>
 </div>
