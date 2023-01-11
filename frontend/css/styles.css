@@ -21,7 +21,7 @@ html::-webkit-scrollbar{
 
 html::-webkit-scrollbar-thumb{
 
-  background-color: #F39422;
+  background-color: #e75913;
   box-shadow: inset 0 0 5px 0 #010038;
   border-radius: 10px;
 }
@@ -131,7 +131,7 @@ header{
 	flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-image: linear-gradient(#010038, rgba(0, 0, 0, 0.2)), url("../img/backgrounds/homeBackground.jpg");
+  background-image: linear-gradient(#010038, rgba(0, 0, 0, 0.2)), url("../img/backgrounds/nuevaimagen\ .jpg");
   background-repeat: no-repeat;
   background-size: cover;
 	background-position: bottom;
@@ -479,7 +479,7 @@ header{
 
 .project-info{
 
-	background-image: linear-gradient(#010038, rgba(0, 0, 0, 0.3)), url("../img/binary_code.jpg");
+	background-image: linear-gradient(#010038, rgba(0, 0, 0, 0.3)), url("../img/backgrounds/nuevaimagen\ .jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: bottom;

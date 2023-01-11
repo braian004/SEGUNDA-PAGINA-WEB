@@ -5,7 +5,7 @@
     height: 50px;
     bottom: 0;
     left: 0;
-    background: url("../img/backgrounds/wave.png");
+    background: url("");
     animation: animate 20s linear infinite;
 }
 

@@ -7,9 +7,9 @@ const img_data = [{
     img_path: "img/icons/python.png"
 },
 {
-    id: "java",
-    caption: "Java",
-    img_path: "img/icons/java.png"
+    id: "mySQL",
+    caption: "mySQL",
+    img_path: "img/icons/mySQL.png"
 },
 {
     id: "c++",
@@ -19,7 +19,7 @@ const img_data = [{
 {
     id: "sql",
     caption: "SQL",
-    img_path: "img/icons/sql.png"
+    img_path: "5968313.png"
 },
 {
     id: "mongo_db",
@@ -85,7 +85,7 @@ $tech_div.appendChild($fragment);
 const projects_data = [{
 
     name: "Location Tracker",
-    technologies: "Java - MongoDB - Android",
+    technologies: "Python - MongoDB - Android",
     description: "Location Service gets last known location by a background service and uploads it to a MongoDB collection, and finally Location Tracker queries that location and sets a marker on a map.",
     url: "https://github.com/SantiagoPujana/LocationTrackerProject"
 },
